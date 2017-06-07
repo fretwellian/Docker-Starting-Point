@@ -1,0 +1,37 @@
+version: '2'
+services:
+    web:
+        build: ./
+        image: lukecom_image
+        volumes:
+            - ./www:/var/www
+        networks:
+            - lukecom-network
+        ports:
+            - 80:80
+            - 443:443
+        environment:
+            APP_ENV: ${APP_ENV}
+            XDEBUG_HOST: ${XDEBUG_HOST}
+            run_jobs : 'false'
+
+    db:
+        image: mysql:5.7
+        volumes:
+            - data:/var/lib/mysql
+        networks:
+            - lukecom-network
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: frets
+            MYSQL_USER: frets
+            MYSQL_PASSWORD: frets
+
+networks:
+    lukecom-network:
+        driver: bridge
+volumes:
+    data:
+        driver: local
