@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker build -t lukecom_image .
+docker build -t changecom_image .

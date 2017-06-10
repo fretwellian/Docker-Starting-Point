@@ -23,7 +23,7 @@ server {
 	# Add index.php to the list if you are using PHP
 	index index.php index.html index.htm index.nginx-debian.html;
 
-	server_name luke.com;
+	server_name change.com;
     client_max_body_size 20000M;
 
     # Media: images, icons, video, audio, HTC

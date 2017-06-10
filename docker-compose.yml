@@ -2,11 +2,11 @@ version: '2'
 services:
     web:
         build: ./
-        image: lukecom_image
+        image: changecom_image
         volumes:
             - ./www:/var/www
         networks:
-            - lukecom-network
+            - changecom-network
         ports:
             - 80:80
             - 443:443
@@ -20,17 +20,17 @@ services:
         volumes:
             - data:/var/lib/mysql
         networks:
-            - lukecom-network
+            - changecom-network
         ports:
             - 3306:3306
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: frets
-            MYSQL_USER: frets
-            MYSQL_PASSWORD: frets
+            MYSQL_DATABASE: change
+            MYSQL_USER: change
+            MYSQL_PASSWORD: change
 
 networks:
-    lukecom-network:
+    changecom-network:
         driver: bridge
 volumes:
     data:

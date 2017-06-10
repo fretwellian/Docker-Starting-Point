@@ -38,9 +38,9 @@ RUN apt-get install git -y
 COPY ./www /var/www/
 
 # Update nginx config
-COPY ./docker/nginx/luke.com /etc/nginx/sites-available/luke.com
+COPY ./docker/nginx/change.com /etc/nginx/sites-available/change.com
 RUN rm /etc/nginx/sites-available/default
-RUN ln -s /etc/nginx/sites-available/luke.com /etc/nginx/sites-enabled/luke.com
+RUN ln -s /etc/nginx/sites-available/change.com /etc/nginx/sites-enabled/change.com
 
 # Define default command.
 COPY ./docker/start-container /usr/local/bin/start-container
